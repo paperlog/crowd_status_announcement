@@ -1,0 +1,143 @@
+:root {
+  --bg: #f4f6f9;
+  --card-bg: #ffffff;
+  --text-main: #1f2937;
+  --text-sub: #6b7280;
+  --border: #e5e7eb;
+  --accent: #3b82f6;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", sans-serif;
+  background-color: var(--bg);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 480px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: var(--text-sub);
+}
+
+.status-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 28px 24px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  text-align: center;
+  border-top: 6px solid #9ca3af;
+  transition: border-color 0.2s ease;
+}
+
+.status-label {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: var(--text-sub);
+  margin-bottom: 12px;
+}
+
+.status-badge {
+  font-size: 1.75rem;
+  font-weight: 800;
+  padding: 12px 24px;
+  border-radius: 999px;
+  background-color: #f3f4f6;
+  color: #374151;
+  margin-bottom: 16px;
+}
+
+/* ステータス別の色分け */
+.status-card[data-status="empty"] {
+  border-top-color: #10b981;
+}
+.status-card[data-status="empty"] .status-badge {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.status-card[data-status="moderate"] {
+  border-top-color: #f59e0b;
+}
+.status-card[data-status="moderate"] .status-badge {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.status-card[data-status="full"] {
+  border-top-color: #ef4444;
+}
+.status-card[data-status="full"] .status-badge {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.status-comment {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-main);
+  margin-bottom: 18px;
+  min-height: 1.5em;
+}
+
+.status-comment:empty {
+  display: none;
+}
+
+.status-meta {
+  font-size: 0.8rem;
+  color: var(--text-sub);
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+
+.actions {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.reload-btn {
+  background-color: var(--accent);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 24px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.reload-btn:hover {
+  opacity: 0.9;
+}
+
+.reload-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
