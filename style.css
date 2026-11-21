@@ -1,11 +1,11 @@
 :root {
-  --bg: #eef2f6;
+  --bg: #f4f6f8;
   --card-bg: #ffffff;
-  --text-main: #111827;
-  --text-sub: #4b5563;
-  --border: #e5e7eb;
-  --btn-bg: #1d4ed8;
-  --btn-active: #1e40af;
+  --text-main: #000000;
+  --text-sub: #1f2937;
+  --border: #9ca3af;
+  --btn-bg: #1e40af;
+  --btn-active: #172554;
 }
 
 * {
@@ -16,7 +16,7 @@
 }
 
 html {
-  font-size: 18px;
+  font-size: 20px;
 }
 
 body {
@@ -27,100 +27,108 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 24px 20px;
 }
 
 .container {
   width: 100%;
-  max-width: 540px;
+  max-width: 560px;
 }
 
+/* header と section の間を広めに確保 */
 .header {
   text-align: center;
-  margin-bottom: 24px;
+  margin-bottom: 36px;
 }
 
+/* h1 と p の間を確保 */
 .header h1 {
-  font-size: 2rem;
-  font-weight: 800;
+  font-size: 2.1rem;
+  font-weight: 900;
   letter-spacing: 0.02em;
   line-height: 1.3;
-  margin-bottom: 8px;
+  margin-bottom: 24px;
 }
 
 .subtitle {
   font-size: 1.05rem;
+  font-weight: 600;
   color: var(--text-sub);
-  line-height: 1.45;
+  line-height: 1.6;
 }
 
 .status-card {
   background: var(--card-bg);
-  border-radius: 28px;
-  padding: 36px 26px;
-  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.09);
+  border-radius: 26px;
+  padding: 36px 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   text-align: center;
-  border: 2px solid #d1d5db;
-  border-top: 12px solid #9ca3af;
+  border: 3px solid #6b7280;
+  border-top: 14px solid #4b5563;
 }
 
 .status-label {
   display: block;
   font-size: 1.05rem;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--text-sub);
-  letter-spacing: 0.06em;
-  margin-bottom: 18px;
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
 }
 
 .status-badge {
   display: block;
   width: 100%;
-  font-size: clamp(2.25rem, 9.5vw, 3.1rem);
+  font-size: clamp(2.4rem, 10vw, 3.3rem);
   font-weight: 900;
   line-height: 1.25;
-  padding: 28px 20px;
-  border-radius: 22px;
-  background-color: #f3f4f6;
-  color: #374151;
+  padding: 28px 18px;
+  border-radius: 20px;
+  background-color: #e5e7eb;
+  color: #111827;
+  border: 2px solid #9ca3af;
   margin-bottom: 24px;
   word-break: break-word;
 }
 
-/* ステータス別の色分け（スマホ屋外でも見やすい高コントラスト） */
+/* ステータス別の色分け（くっきりしたコントラスト） */
 .status-card[data-status="empty"] {
-  border-color: #a7f3d0;
-  border-top-color: #059669;
+  border-color: #047857;
+  border-top-color: #065f46;
 }
 .status-card[data-status="empty"] .status-badge {
-  background-color: #d1fae5;
-  color: #064e3b;
+  background-color: #a7f3d0;
+  color: #022c22;
+  border-color: #059669;
 }
 
 .status-card[data-status="moderate"] {
-  border-color: #fde68a;
-  border-top-color: #d97706;
+  border-color: #b45309;
+  border-top-color: #92400e;
 }
 .status-card[data-status="moderate"] .status-badge {
-  background-color: #fef3c7;
-  color: #78350f;
+  background-color: #fde68a;
+  color: #451a03;
+  border-color: #d97706;
 }
 
 .status-card[data-status="full"] {
-  border-color: #fecaca;
-  border-top-color: #dc2626;
+  border-color: #b91c1c;
+  border-top-color: #991b1b;
 }
 .status-card[data-status="full"] .status-badge {
-  background-color: #fee2e2;
-  color: #7f1d1d;
+  background-color: #fecaca;
+  color: #450a0a;
+  border-color: #dc2626;
 }
 
 .status-comment {
   font-size: 1.15rem;
-  font-weight: 500;
-  line-height: 1.7;
+  font-weight: 600;
+  line-height: 1.75;
   color: var(--text-main);
-  background-color: #f9fafb;
+  background-color: #f3f4f6;
+  border: 1px solid #d1d5db;
   border-radius: 16px;
   padding: 18px 20px;
   margin-bottom: 24px;
@@ -132,10 +140,10 @@ body {
 }
 
 .status-meta {
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 1.05rem;
+  font-weight: 700;
   color: var(--text-sub);
-  border-top: 1px solid var(--border);
+  border-top: 2px solid var(--border);
   padding-top: 18px;
 }
 
@@ -146,30 +154,27 @@ body {
 .reload-btn {
   display: block;
   width: 100%;
-  min-height: 66px;
+  min-height: 70px;
   background-color: var(--btn-bg);
   color: #ffffff;
-  border: none;
+  border: 2px solid #172554;
   border-radius: 18px;
   padding: 18px 24px;
-  font-size: 1.2rem;
-  font-weight: 700;
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
   cursor: pointer;
-  box-shadow: 0 6px 16px rgba(29, 78, 216, 0.28);
 }
 
 .reload-btn:active {
   background-color: var(--btn-active);
-  transform: scale(0.99);
 }
 
 .reload-btn:disabled {
   opacity: 0.55;
   cursor: not-allowed;
-  box-shadow: none;
 }
 
-/* PCなど大きめの画面では余白を少し広げてシンプルに中央配置 */
 @media (min-width: 640px) {
   body {
     padding: 40px;
